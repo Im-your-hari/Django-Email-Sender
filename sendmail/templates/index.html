@@ -1,0 +1,161 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MailSystem</title>
+    
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        body{
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            color: #333;
+            font-family: Arial,helvetica neue,Helvetica,sans-serif;
+        }
+        .header{
+            background-color:  #0a436b;
+            height: 55px;
+        }
+        .logo{
+            color:ghostwhite;
+            box-shadow:0 0 #999;
+            padding:20px 40px ;
+            margin-top: auto;
+            margin-left: 2%;
+            font-weight: bold;
+            font-size: 17px;
+            text-decoration: none;
+        }
+        .login{
+            background-color: #0a436b;
+            box-shadow:0 0 #999;
+            width: 100%;
+            height: 440px;
+            position: absolute;
+            padding-top: 180px;
+            padding-bottom: 34px;
+        }
+        .boxa,.boxb{
+            text-align: center;
+        }
+
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-weight: bold;
+            color: ghostwhite;
+        }
+        .boxa input[type = "submit"],.boxb input[type = "submit"]{
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #fff;
+            color: ghostwhite;
+            font-weight: 500;
+            font-weight: bold;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            border-radius: 24px;
+            transition: .24s;
+            cursor: pointer;
+        }
+        .boxa input[type = "submit"]:hover,.boxb input[type = "submit"]:hover{
+            width: 220px;
+            background: #000000;
+        }
+        .section{
+            position: absolute;
+        }
+        .add{
+            max-width: 350px;
+            margin: auto;
+            border-radius: 5px;
+            padding: 70px 500px;   
+        }
+        .menu{
+            padding: 20px;
+            border: none;
+            position: relative;
+        }
+        select,textarea{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            content: none;
+            display: flex;
+            position: relative;
+            text-align: center;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            cursor: pointer;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+
+        }
+        .box{
+            padding-left: 85px;
+            text-align: center;
+            box-shadow:0 0 #999;
+        }
+        .box input[type = "submit"]{
+            border: 0;
+            background: none;
+            background-color: #0a436b;
+            display: block;
+            text-align: center;
+            border: 2px solid;
+            color: ghostwhite;
+            font-weight: 500;
+            width: 85px;
+            height: 35px;
+            outline: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <p>CHRISTIJK</p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="add">
+            <div class="menu">
+                <form method="POST" action="submit">
+                    {% csrf_token %}
+                    <label for="Time">Time</label><br>
+                    <input type="time" name="time" id="time">
+                    <br><br>
+                    <label for="sub">Subject</label><br>
+                    <select id="sub" name="subject">
+        <option selected="DBMS" name="subject">DBMS</option>
+        <option selected="DC" name="subject">DC</option>
+        <option selected="MICRO PROCESSER" name="subject">Micro Processer</option>
+        <option selected="STATISTICSt" name="subject">Statistics</option>
+        <option selected="MATHS" name="subject">Maths</option>
+      </select><br>
+                    <label for="msg">Message</label><br>
+                    <textarea name="message" id="link" cols="20" rows="3" placeholder="Enter here..."></textarea><br>
+            </div>
+            <div class="box">
+                <input type="submit" >
+            </div>
+            </form>
+        </div>
+</body>
+
